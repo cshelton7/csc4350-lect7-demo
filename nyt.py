@@ -9,7 +9,7 @@ BASE_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json'
 
 def get_article_data(keyword):
     """ Returns a list of headlines about a given topic """
-
+for page in range(2):
     params = {
         'q': keyword,
         'api-key': os.getenv('NYT_KEY'),
@@ -27,8 +27,7 @@ def get_article_data(keyword):
 
     headlines = map(get_headline, articles)
     snippets = map(get_snippet, articles)
-
-    return {
-        'headlines': list(headlines),
-        'snippets': list(snippets),
+    return {  
+    'headlines': list(headlines),
+    'snippets': list(snippets),
     }
