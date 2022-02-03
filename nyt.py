@@ -9,6 +9,7 @@ BASE_URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json'
 
 def get_article_data(keyword):
     """ Returns a list of headlines about a given topic """
+    
     for page in range(2):
         params = {
             'q': keyword,
